@@ -1,10 +1,12 @@
 @extends('layouts.app')
 <!-- informando o nome do layout e englobando o nosso template dentro da section -->
 @section('content')
-    <h1>Editar Loja</h1>
+    <h1>Atualizar Loja</h1>
     <!-- passando o action do form de forma dinâmica pegando o apelido da rota. O segundo parâmetro do route é aonde é feita a passagem de variáveis -->
     <form action="{{route('admin.stores.update', ['store' => $store->id])}}" method="post">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        @csrf
+        @method("PUT")
+        
         <div class="form-group">
             <label for="">Nome Loja</label>
             <input type="text" name="name" class="form-control" value="{{$store->name}}">
