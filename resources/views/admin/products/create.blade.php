@@ -4,8 +4,7 @@
     <h1>Criar Produto</h1>
     <!-- passando o action do form de forma dinâmica pegando o apelido da rota -->
     <form action="{{route('admin.products.store')}}" method="post">
-        @csfr
-        
+        @csrf
         <div class="form-group">
             <label for="">Nome Produto</label>
             <input type="text" name="name" class="form-control">
